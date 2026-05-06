@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { animalService } from '../animal-service/animal-service';
 import {CommonModule} from '@angular/common';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-animal-componet',
@@ -11,7 +12,7 @@ import {CommonModule} from '@angular/common';
 export class AnimalComponet implements OnInit {
   animalList:any= [];
 
-  constructor(private animalService:animalService, private cd: ChangeDetectorRef) {}
+  constructor(private animalService:animalService, private cd: ChangeDetectorRef, private toastr: ToastrService) {}
   
   getAllAnimals() {
     this.animalService.getAllAnimalsData().subscribe((data: {}) => {
