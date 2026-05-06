@@ -7,17 +7,17 @@
         <th scope="col">Nombre</th>
         <th scope="col">Edad</th>
         <th scope="col">Tipo</th>
-        <th scope="col">Fecha</th>
+        
     </tr>
     </thead>
     <tbody>
-    @for (item of animalList; track item._id){
-    <tr>
+    <td>
+    <tr *ngFor="let item of animalList">
         <td>{{ item.nombre }}</td>
         <td>{{ item.edad }}</td>
         <td>{{ item.tipo }}</td>
     </tr>
-    }
+    </td>
     </tbody>
     </table>
     </div>

@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class animalService {
-  apiUri = '/api/Animal';
+  apiUri = '/api/animals';
 
   httpOptions = new HttpHeaders().set('Content-Type', 'application/json');
 
