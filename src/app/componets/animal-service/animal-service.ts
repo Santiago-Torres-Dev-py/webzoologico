@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-
 @Component({
   selector: 'app-animal-service',
   imports: [],
@@ -23,4 +22,13 @@ export class animalService {
   }
 
   constructor(private http: HttpClient) { }
+
+  //Modificando el servició para POST
+
+  newAnimal(data: any): Observable<any> {
+  return this.http.post<any>(
+    this.apiUri,
+    data,
+    { headers: this.httpOptions });
+  }
 }
