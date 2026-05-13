@@ -1,0 +1,25 @@
+.main-container {
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.header {
+  background: linear-gradient(135deg, #0ea5e9, #22c55e);
+  padding: 40px;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import {CommonModule} from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-animal-componet',
   standalone: true,
@@ -17,6 +18,9 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 export class AnimalComponet implements OnInit {
   animalList:any= [];
   animalForm: FormGroup | any;
+  idAnimal: any;
+  editableAnimal: boolean = false;
+
 
   constructor(
     private animalService:animalService,
@@ -64,4 +68,46 @@ export class AnimalComponet implements OnInit {
       }
     );
   }
+
+  updateAnimalEntry() {
+    //removiendo valores vacios del formulario de actualizacion
+    for (let key in this.animalForm.value) {
+      if (this.animalForm.value[key] === ''){
+        this.animalForm.removeControl(key);
+      }
+    }
+    this.animalService.updateAnimal(
+      this.idAnimal,
+      this.animalForm.value).subscribe(
+        () => {
+          //enviando mensaje de confirmacion
+          this.newMessage("Animal editando")
+      }
+    );
+  }
+  toggleEditAnimal(id: any) {
+    this.idAnimal = id;
+    console.log(this.idAnimal)
+    this.animalService.getOneAnimal(id).subscribe(
+      data => {
+        this.animalForm.setValue({
+          nombre: data.nombre,
+          edad: data.edad,
+          tipo: data.tipo,
+        });
+      }
+    );
+    this.editableAnimal = !this.editableAnimal;
+  }
+
+  deleteAnimalEntry(id: any) {
+    console.log(id)
+    this.animalService.deleteAnimal(id).subscribe(
+    () => {
+    //Enviando mensaje de confirmación
+    this.newMessage("Animal eliminado");
+    }
+  );
+ }
+
 }

@@ -1,0 +1,24 @@
+.container{
+    max-width: 1200px;
+}
+
+.service-header{
+    background: linear-gradient(135deg,#6366f1,#06b6d4);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+}
+
+.service-card{
+    border: none;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.service-card:hover{
+    transform: translateY(-8px);
+}
+
+.service-card .card-body{
+    padding: 30px;
+}

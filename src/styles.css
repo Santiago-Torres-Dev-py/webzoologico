@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body{
+    background: #f1f5f9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TITULOS */
+h1,h2,h3,h4,h5{
+    margin: 0;
+}
+
+/* TABLAS */
+table{
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* INPUTS */
+.form-control{
+    border-radius: 10px;
+}
+
+/* BOTONES */
+.btn{
+    border-radius: 10px;
+}
